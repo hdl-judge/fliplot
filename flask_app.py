@@ -8,14 +8,14 @@ from flask import Flask, jsonify, send_file, request
 here = os.path.dirname(os.path.realpath(__file__))
 sys.path.append(os.path.join(here, '..'))
 
-from .core import parseFile
+from fliplot.core import parseFile
 here = os.path.dirname(os.path.realpath(__file__))
 
 logging.basicConfig(format='%(asctime)s,%(msecs)d %(levelname)-8s %(filename)s:%(lineno)d %(message)s',
     datefmt='%Y-%m-%d:%H:%M:%S',
     level=logging.DEBUG)
 
-app = Flask(__name__)
+app = Flask('fliplot')
 
 @app.route('/')
 def static_file():
