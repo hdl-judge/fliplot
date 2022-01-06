@@ -8,7 +8,7 @@ from flask import Flask, jsonify, send_file, request
 here = os.path.dirname(os.path.realpath(__file__))
 sys.path.append(os.path.join(here, '..'))
 
-from core import parseFile
+import core
 here = os.path.dirname(os.path.realpath(__file__))
 
 logging.basicConfig(format='%(asctime)s,%(msecs)d %(levelname)-8s %(filename)s:%(lineno)d %(message)s',
@@ -39,7 +39,7 @@ def parse_vcd():
     logging.info(f'open file to parse: {fname}')
 
     try:
-        data = parseFile(os.path.join(here, fname), content)
+        data = core.parseFile(os.path.join(here, fname), content)
         return jsonify(data)  
     except Exception as e:
         logging.info(f'Error: {e}')
