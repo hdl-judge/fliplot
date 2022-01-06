@@ -10,7 +10,7 @@ try:
 except ModuleNotFoundError:
     pass
 try:
-    from .vcdvcd import VCDVCD
+    import vcdvcd
     vcdParsers.append('vcdvcd')
 except ModuleNotFoundError:
     pass
@@ -98,7 +98,7 @@ def parseWith_pyDigitalWaveTools(fname):
 def parseWith_vcdvcd(fname=None, content=None):
     if content:
         fname = None
-    vcd = VCDVCD(fname, content)
+    vcd = vcdvcd.VCDVCD(fname, content)
     data = vcd.get_data()
     return format_vcdvcd(data)
 
