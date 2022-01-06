@@ -1,1 +1,1 @@
-web: waitress-serve --port=$PORT --call flask_app:create_app
+web: gunicorn -w 4 --bind 0.0.0.0:$PORT flask_app:app
