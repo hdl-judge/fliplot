@@ -1,1 +1,1 @@
-web: FLASK_APP=flask_app FLASK_ENV=production flask run --port 80
+web: waitress-serve --port=$PORT --call flask_app:create_app
