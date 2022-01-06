@@ -1,1 +1,1 @@
-web: gunicorn -w 4 --bind 0.0.0.0:8001 flask_app:app --python-path $(pwd)
+web: gunicorn -w 4 --bind 0.0.0.0:$PORT flask_app:app --pythonpath $(pwd)
