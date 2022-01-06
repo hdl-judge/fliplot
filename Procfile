@@ -1,1 +1,1 @@
-web: FLASK_APP=flask_app FLASK_ENV=development flask run --port $PORT
+web: PYTHONPATH=$(pwd) FLASK_APP=flask_app FLASK_ENV=development flask run --port $PORT
